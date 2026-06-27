@@ -163,8 +163,10 @@ Copy-Item common\.claude\keybindings.json "$env:USERPROFILE\.claude\"
 WSL (Ubuntu) のターミナルで実行:
 
 ```bash
-git clone <リポジトリURL> ~/dev/dev-env
+git clone https://github.com/keyroot-dev/dev-env ~/dev/dev-env
 cd ~/dev/dev-env
+# このPCからは push しないようにする
+git remote set-url --push origin no-push
 ```
 
 ### 6. WSL 側: Neovim をインストール
