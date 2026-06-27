@@ -32,6 +32,7 @@ brew install --cask karabiner-elements
 brew install --cask rectangle
 brew install neovim
 brew install mise
+brew install lazygit
 ```
 
 ### 2. フォントをインストール（WezTerm で使用）
@@ -123,7 +124,12 @@ scoop bucket add extras
 scoop install extras/wezterm
 ```
 
-### 2. Windows 側: WSL をインストール
+### 2. Windows 側: フォントをインストール（WezTerm で使用）
+
+1. https://github.com/yuru7/HackGen/releases から最新の `HackGen_NF_vX.X.X.zip` をダウンロード
+2. zip を展開し、`HackGenConsoleNF-Regular.ttf` を右クリック →「すべてのユーザー用にインストール」
+
+### 3. Windows 側: WSL をインストール
 
 PowerShell（管理者）で実行:
 
@@ -133,7 +139,7 @@ wsl --install
 
 再起動後、Ubuntu が起動するのでユーザー名とパスワードを設定する。
 
-### 3. Windows 側: WezTerm の設定ファイルを配置
+### 4. Windows 側: WezTerm の設定ファイルを配置
 
 PowerShell で実行:
 
@@ -142,7 +148,7 @@ New-Item -ItemType Directory -Force "$env:USERPROFILE\.config\wezterm"
 Copy-Item common\.config\wezterm\wezterm.lua "$env:USERPROFILE\.config\wezterm\"
 ```
 
-### 4. Windows 側: Claude Code のキーバインドを配置
+### 5. Windows 側: Claude Code のキーバインドを配置
 
 ```powershell
 New-Item -ItemType Directory -Force "$env:USERPROFILE\.claude"
@@ -152,7 +158,7 @@ Copy-Item common\.claude\keybindings.json "$env:USERPROFILE\.claude\"
 `Shift+Enter` で改行できない場合は `keybindings.json` のコメントアウトを外して
 `shift+enter: chat:newline` を有効化する。
 
-### 5. WSL 側: このリポジトリをクローン
+### 6. WSL 側: このリポジトリをクローン
 
 WSL (Ubuntu) のターミナルで実行:
 
@@ -169,6 +175,7 @@ curl https://mise.run | sh
 echo 'eval "$(~/.local/bin/mise activate bash)"' >> ~/.bashrc
 source ~/.bashrc
 mise use --global neovim@latest
+mise use --global lazygit@latest
 ```
 
 ### 7. WSL 側: LazyVim をインストール
