@@ -1,0 +1,18 @@
+{
+  "$schema": "https://www.schemastore.org/claude-code-keybindings.json",
+  "$docs": "https://code.claude.com/docs/en/keybindings",
+  "bindings": [
+    // -------------------------------------------------------------------------
+    // Chat コンテキスト: チャット入力欄にフォーカスがあるとき
+    // -------------------------------------------------------------------------
+    // {
+    //   "context": "Chat",
+    //   "bindings": {
+    //     // 改行（サブミットせずに改行を挿入）
+    //     // Mac: Shift+Enter がデフォルトで動作するため追加不要
+    //     // Windows: Shift+Enter が動かない場合は以下を有効化
+    //     "shift+enter": "chat:newline"
+    //   }
+    // }
+  ]
+}

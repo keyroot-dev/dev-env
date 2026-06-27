@@ -1,0 +1,3 @@
+.DS_Store
+# LazyVim が自動更新する動的ファイル
+common/.config/nvim/lazy-lock.json

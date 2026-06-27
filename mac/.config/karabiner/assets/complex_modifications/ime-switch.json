@@ -1,0 +1,40 @@
+{
+  "title": "Shift+Space でIME切替",
+  "rules": [
+    {
+      "description": "Shift+Space → IME切替(英数/かな)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "spacebar",
+            "modifiers": { "mandatory": ["left_shift"] }
+          },
+          "to": [{ "key_code": "lang1" }],
+          "conditions": [
+            {
+              "type": "input_source_if",
+              "input_sources": [{ "language": "en" }]
+            }
+          ],
+          "description": "英語入力中にShift+Space → かなに切替"
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "spacebar",
+            "modifiers": { "mandatory": ["left_shift"] }
+          },
+          "to": [{ "key_code": "lang2" }],
+          "conditions": [
+            {
+              "type": "input_source_if",
+              "input_sources": [{ "language": "ja" }]
+            }
+          ],
+          "description": "日本語入力中にShift+Space → 英語に切替"
+        }
+      ]
+    }
+  ]
+}
